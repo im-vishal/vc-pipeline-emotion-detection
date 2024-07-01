@@ -55,3 +55,24 @@ stages:
       md5: c613695c1b057fe48a8bbea736f6b977.dir
       size: 2106516
       nfiles: 2
+  model_building:
+    cmd: python src/model/model_building.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: c613695c1b057fe48a8bbea736f6b977.dir
+      size: 2106516
+      nfiles: 2
+    - path: src/model/model_building.py
+      hash: md5
+      md5: 96c25bc19ca65f3e5cb0be1651955041
+      size: 2511
+    params:
+      params.yaml:
+        model_building.learning_rate: 0.1
+        model_building.n_estimators: 25
+    outs:
+    - path: models/model.joblib
+      hash: md5
+      md5: 4a52e57387f825ae454269128e3f5ec1
+      size: 53484
